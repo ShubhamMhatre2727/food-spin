@@ -5,14 +5,17 @@ import {AnimatePresence, motion} from "framer-motion"
 export default function Menu() {
     const [[angle, index], setData] = useState([0,0]);
   return (
-    <div className='w-full aspect-square flex justify-center items-center relative'>
+    <div className='w-2/5 aspect-square flex justify-center items-center relative'>
 
-    <div className='absolute size-5/6 border-2 border-dashed border-black rounded-full'/>
+    {/* ring */}
+    <motion.div animate={{rotate:angle}} transition={{ease:'linear', duration:0.3}} className='absolute size-5/6 border-2 border-dashed border-black rounded-full -z-20'/>
       
-    <motion.div animate={{rotate:angle}} transition={{ease:'linear', duration:0.3}} className='absolute size-full'>
+      {/* dishes */}
+    <motion.div animate={{rotate:angle}} transition={{ease:'linear', duration:0.3}} className='absolute size-full -z-20'>
       <Wheel/>
     </motion.div>
 
+    {/* plate */}
     <div className='size-full flex justify-center items-center relative'>
     <AnimatePresence>
 <motion.img
@@ -29,7 +32,8 @@ export default function Menu() {
 </AnimatePresence>
     </div>
 
-    <div className='absolute bottom-0 px-12 py-4 w-full flex justify-between'>
+    {/* controls */}
+    <div className='absolute top-1/2 px-12 py-4 w-full flex justify-between'>
       <button className={`p-3 bg-orange-600 rounded-full active:bg-black ${(index === 0 && "opacity-0")}`} onClick={()=>setData([angle-60,Math.abs(index-1)%3])}>
         <img src="src/assets/down-arrow.svg" alt="" />
       </button>

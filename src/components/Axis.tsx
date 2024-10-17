@@ -1,12 +1,8 @@
 export default function Axis({src}:{src:string}) {
   return (
     <div className="flex justify-between items-center">
-        <div className="size-20 rounded-full overflow-hidden">
-            <img src={src} alt=""/>
-        </div>
-        <div className="size-20 rounded-full overflow-hidden">
-            <img src={src} alt=""/>
-        </div>
+            <img src={src} alt="" className="size-28 rounded-full"/>
+            <img src={src} alt="" className="size-28 rounded-full"/>
     </div>
   )
 }

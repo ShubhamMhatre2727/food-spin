@@ -1,25 +1,22 @@
-import { div } from 'framer-motion/client';
 import Menu from './components/Menu';
-import Description from './components/description';
+import Description from './components/Description';
 
 function App() {
   
 
   return (
-     <div>
-      <nav className='py-4'>
-        fbf
+     <div className='w-dvw h-dvh relative overflow-hidden'>
+      
+      <nav className='border w-full h-[10%]'>
+        nav
       </nav>
-      <div className='border-2 border-black flex items-center'>
-      <div className='w-3/5 -z-0'>
-      <Description/>
-      </div>
-      <div className='w-2/5 -z-0'>
+      <div className='border h-full flex items-center justify-around -z-30'>
+        <Description/>
         <Menu/>
       </div>
-
-      <div className='absolute -top-[120%] -right-96 w-full aspect-square rounded-full bg-orange-400 -z-50' />
-     </div>
+      <div className='absolute w-screen scale-150 -top-[130%] -right-[20%] -z-10'>
+      <img src="src/assets/cover.svg" alt="" className='w-full aspect-square object-contain' />
+      </div>
      </div>
   )
 }

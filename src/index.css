@@ -18,16 +18,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.absolute-center{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.grid-center{
-  display: grid;
-  place-content: center;
-  grid-row: 1;
-  grid-column: 1;
+.hide-outside{
+  border: 10px solid wheat;
+  
 }
