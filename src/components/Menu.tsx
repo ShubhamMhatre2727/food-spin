@@ -8,15 +8,15 @@ export default function Menu() {
     <div className='w-2/5 aspect-square flex justify-center items-center relative'>
 
     {/* ring */}
-    <motion.div animate={{rotate:angle}} transition={{ease:'linear', duration:0.3}} className='absolute size-5/6 border-2 border-dashed border-black rounded-full -z-20'/>
+    <motion.div animate={{rotate:angle}} transition={{ease:'linear', duration:0.3}} className='absolute size-5/6 border-2 border-dashed border-black rounded-full z-0'/>
       
       {/* dishes */}
-    <motion.div animate={{rotate:angle}} transition={{ease:'linear', duration:0.3}} className='absolute size-full -z-20'>
+    <motion.div animate={{rotate:angle}} transition={{ease:'linear', duration:0.3}} className='absolute size-full -z-0'>
       <Wheel/>
     </motion.div>
 
     {/* plate */}
-    <div className='size-full flex justify-center items-center relative'>
+    <div className='size-full flex justify-center items-center relative z-10'>
     <AnimatePresence>
 <motion.img
   key={`src/assets/image${index}.svg`}
@@ -33,7 +33,7 @@ export default function Menu() {
     </div>
 
     {/* controls */}
-    <div className='absolute top-1/2 px-12 py-4 w-full flex justify-between'>
+    <div className='absolute top-1/2 px-12 py-4 w-full flex justify-between z-10'>
       <button className={`p-3 bg-orange-600 rounded-full active:bg-black ${(index === 0 && "opacity-0")}`} onClick={()=>setData([angle-60,Math.abs(index-1)%3])}>
         <img src="src/assets/down-arrow.svg" alt="" />
       </button>
